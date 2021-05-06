@@ -21,7 +21,8 @@ app.post("/newData", function (request, response) {
 
 //print the database when a GET request is made by the client
 app.get("/getData", function (request, response) {
-    data.getAllRows(request.query).then(
-        response.json
+    data.getAllRows(request.query).then((data) => {
+      response.json(data)
+    }
     );
 });
