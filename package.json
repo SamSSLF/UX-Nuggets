@@ -1,0 +1,21 @@
+{
+  "name": "nuggetapp",
+  "version": "1.0.0",
+  "description": "This is an interactive UX Nugget Database",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Samantha Foong",
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {
+    "fast-check": "^1.25.1",
+    "mocha": "^8.0.1"
+  }
+}

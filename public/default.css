@@ -1,0 +1,212 @@
+:root
+{
+    --main: #bf472c;
+    --title-background:#403634;
+    --white: white;
+    --black: black;
+    --positive: #00e53b;
+    --neutral: #ffb910;
+    --negative: #FF47D3;
+    --medium: #999999;
+    --low: #e6e6e6;
+    --emotions: #e9ff8e;
+    --table-background: #fcede3;
+}
+
+.overflow-cell{
+    max-height:75px;
+    padding: 10px;
+    overflow: auto;
+    text-overflow: ellipsis;
+    scrollbar-width: thin;
+}
+
+body
+{
+    font-family: 'Rajdhani';
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+
+#sidebar
+{
+    display: flex;
+    flex-direction: column;
+    min-width: 18%;
+    border: 1px solid var(--sidebar-border);
+    background-color: var(--main);
+}
+
+#banner
+{
+    background-color: var(--title-background);
+}
+
+#sidebar-image
+{
+    max-width: 100%;
+    height: auto;
+}
+
+#app-title
+{
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 28pt;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 0.1em;
+    padding-bottom: 0.20em;
+    margin: 0;
+    color: var(--white);
+   
+}
+
+#filter-subtitle
+{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding: 17px;
+}
+
+h2
+{
+    margin: 0;
+    font-size: 12pt;
+    color: var(--white);
+}
+
+#filter-icon{
+    padding-right: 5px;
+}
+
+#filters
+{
+    padding-left: 17px;
+    padding-right:17px;
+}
+
+h2.filter-name
+{
+    font-weight: 400;
+    padding-top: 12pt;    
+}
+
+.drop-down-filter{
+    width:100%;
+}
+
+#data-table
+{
+    flex-grow: 1;
+    overflow: auto;
+    max-height:100vh;
+    min-height:100vh;
+}
+
+#hot-nuggets
+{
+    border-collapse: collapse;
+}
+
+.experience-vector{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 15px;
+    background: var(--positive);
+    color: var(--black);
+    font-weight: 600;
+}
+.experience-vector[data-value="Positive"]
+{
+    background: var(--positive);
+}
+.experience-vector[data-value="Neutral"]
+{
+    background: var(--neutral);
+}
+.experience-vector[data-value="Negative"]
+{
+    background: var(--negative);
+}
+
+#main-table-header
+{
+    text-align: left;
+    background-color: var(--main);
+    font-size: 11pt;
+    font-weight: 500;
+    color: var(--white);
+}
+
+td
+{
+    padding: 10px;
+}
+
+tr
+{    
+    border-top: 1px solid var(--low);
+}
+
+tr:nth-child(even) {
+    background-color: var(--table-background);
+  }
+
+.newInput
+{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+td[data-field="Description"]
+{
+    min-width:300px;
+    padding: 0px;
+}
+
+td[data-field="Insights"], td[data-field="Project"]
+{
+    min-width:200px;
+}
+
+td[data-field="Observation"]
+{
+    min-width:300px;
+}
+
+td[data-field="ObservationDirectory"]
+{
+    min-width:150px;
+}
+
+td[data-field="ExperienceVector"]
+{
+    min-width:130px;
+}
+
+td[data-field="Emotions"]
+{
+    min-width:200px;
+}
+
+button 
+{
+    transition-duration: 0.4s;
+    border-radius:8px;
+    padding: 14px 16px;
+    font-family: 'Rajdhani';
+    font-size: large;
+    font-weight: 700;
+}
+  
+button:hover 
+{
+    background-color: var(--main);
+    color: var(--white);
+    cursor: pointer;
+}
