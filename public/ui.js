@@ -160,6 +160,24 @@ UI.init = function() {
 
     const button = el("submit");
     button.onclick = onButtonClick;
+    
+    //popup window
+    const popup = el("hover_bkgr_fricc");
+
+    const submitNew = el("submit-new");
+
+    const closeButton = el("popupCloseButton");
+
+    submitNew.onclick = () => {
+        console.log("User wants to submit a new nugget");
+        popup.style.display = "block";
+    };
+
+    closeButton.onclick = () => {
+        console.log("User wants to close the popup");
+        popup.style.display = "none";
+    }
+
 };
 
 export default Object.freeze(UI);
