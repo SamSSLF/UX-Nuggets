@@ -1,4 +1,6 @@
 /*jslint node: true */
+import sqlite3 from "sqlite3";
+
 const path = "./nuggets.sqlite3"
 
 class Data {
@@ -6,7 +8,7 @@ class Data {
         this.db = new sqlite3.Database(path);
     }
 
-    insertData (data, db){
+    insertData (data){
         const insertSQL =
         `INSERT INTO Nuggets(
             Observation,
@@ -34,8 +36,8 @@ class Data {
             $SensemakerName
              )`;
     
-        return new Promise(function (resolve, reject) {
-            db.all(insertSQL, {
+        return new Promise((resolve, reject) => {
+            this.db.all(insertSQL, {
                 "$Observation": data.Observation,
                 "$ObservationDirectory": data.ObservationDirectory,
                 "$ExperienceVector": data.ExperienceVector,
@@ -59,7 +61,7 @@ class Data {
     
     
     }
-    getAllRows (filter, db) {
+    getAllRows (filter) {
         let allNuggets = "SELECT * FROM Nuggets";
         const params = {};
         if(filter && filter.experienceVector && filter.experienceVector !== "All"){
@@ -68,8 +70,8 @@ class Data {
         }
         allNuggets += " ORDER BY ID desc";
     
-        return new Promise(function (resolve, reject) {
-            db.all(allNuggets, params, function (error, rows) {
+        return new Promise((resolve, reject) => {
+            this.db.all(allNuggets, params, function (error, rows) {
                 if (error) {
                     reject(error);
                     return;
