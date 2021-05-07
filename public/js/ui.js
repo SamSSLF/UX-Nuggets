@@ -1,18 +1,6 @@
+import {getByID, getFieldInTemplate, getFilterElement, cloneTemplate} from "./utils.js"
 
 const UI = Object.create(null);
-
-
-//functional programming
-const el = (id) => document.getElementById(id);
-const cloneTemplate = (id) => document.importNode(el(id).content, true);
-
-const getFieldInTemplate = function (field, template) {
-    return template.querySelector(`[data-field="${field}"]`);
-};
-
-const getFilterElement = function (field) {
-    return el("filters").querySelector(`[name="${field}"]`);
-};
 
 const setFieldInTemplate = function (field, content, template) {
     const fieldEl = getFieldInTemplate(field, template);
@@ -60,9 +48,9 @@ const addRowToTable = function(row, tableBody) {
 // main data load function
 const reloadData = function() {
     // clear all data rows
-    var allRows = Array.prototype.slice.call(el("table-body").children);
+    var allRows = Array.prototype.slice.call(getByID("table-body").children);
     var dataRows = allRows.filter((row) => row.id !== "user-input");
-    dataRows.forEach((row) => el("table-body").removeChild(row));
+    dataRows.forEach((row) => getByID("table-body").removeChild(row));
 
     const filter = {
         experienceVector: getFilterElement("ExperienceVector").value
@@ -74,7 +62,7 @@ const reloadData = function() {
     })
     .then((response) => response.json())
     .then((data) => data.forEach(function (data){
-        addRowToTable(data,el("table-body"));
+        addRowToTable(data,getByID("table-body"));
     }));
 };
 
@@ -96,7 +84,7 @@ const getCellValue = function(field, cell){
 };
 
 const onButtonClick = function(){
-    const inputRow = el("user-input");
+    const inputRow = getByID("user-input");
     var data = {};
     const emptyFields = [];
     //write the new nugget to data
@@ -158,15 +146,15 @@ UI.init = function() {
     const filter = getFilterElement("ExperienceVector");
     filter.onchange = reloadData;
 
-    const button = el("submit");
+    const button = getByID("submit");
     button.onclick = onButtonClick;
     
     //popup window
-    const popup = el("hover_bkgr_fricc");
+    const popup = getByID("hover_bkgr_fricc");
 
-    const submitNew = el("submit-new");
+    const submitNew = getByID("submit-new");
 
-    const closeButton = el("popupCloseButton");
+    const closeButton = getByID("popupCloseButton");
 
     submitNew.onclick = () => {
         console.log("User wants to submit a new nugget");
