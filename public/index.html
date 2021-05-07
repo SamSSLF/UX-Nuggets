@@ -35,9 +35,87 @@
     </section>  
 <div id="hover_bkgr_fricc">
     <span id="helper"></span>
-    <div>
+    <div id="user-input">
         <div id="popupCloseButton">&times;</div>
-        <p>Add any HTML content<br />inside the popup box!</p>
+        <p>
+        <div data-new="Observation">
+            <label for="newObservation">New observation</label>
+            <textarea name="Observation" id="newObservation" aria-label="New observation" class="newInput" placeholder='"Smell of hot metal in the AstroPod..."'></textarea>
+        </div>
+        <div data-new="ObservationDirectory">
+            <label for="newDirectory">Evidence?</label>
+            <textarea name="ObservationDirectory" id="newDirectory" aria-label="New observation directory" class="newInput" placeholder="Link to video/report/email/voice recording"></textarea>
+        </div>
+        <div data-new="ExperienceVector">
+            <label for="newExpVec">Experience Vector</label>
+            <select name="Experience" aria-label="New experience vector" id="newExpVec">
+                <option value="">Select One</option>
+                <option value="Positive">Positive</option>
+                <option value="Neutral">Neutral</option>
+                <option value="Negative">Negative</option>
+            </select>
+        </div>
+        <div data-new="Magnitude">
+            <label for="Mag">Magnitude</label>
+            <select name="Magnitude" aria-label="New magnitude" id="Mag">
+                <option value="">Select One</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+        <div data-new="Frequency">
+            <label for="freq">Frequency</label>
+            <select name="Frequency" aria-label="New frequency" id="freq">
+                <option value="">Select One</option>
+                <option value="Once">Once</option>
+                <option value="Several Times">Several Times</option>
+                <option value="Often">Often</option>
+                <option value="Constant">Constant</option>
+            </select>
+        </div>
+        <div data-new="Emotions">
+            <label for="emotions">How does the user feel?</label>
+            <textarea id ="emotions" name="Emotions" aria-label="New emotions" class="newInput" placeholder="Separate emotions with #"></textarea>
+        </div>
+        <div data-new="Insights">
+            <label for="insight">What can we learn?</label>
+            <textarea id="insight" name="Insights" aria-label="New insights" class="newInput" placeholder='"Unnatural smells affect mental health..."'></textarea>
+        </div>
+        <div data-new="Description">
+            <label for="description">Decribe what you learnt</label>
+            <textarea id="description" name="Description" aria-label="New description" class="newInput" placeholder='"Research shows..."'></textarea>
+        </div>
+        <div data-new="Project">
+            <label for="project">Project</label>
+            <select name="Project" aria-label="New project" id="project">
+                <option value="">Select One</option>
+                <option value="Community Pod UX">Community Pod UX</option>
+                <option value="Martian Frontiers Colony Induction">Martian Frontiers Colony Induction</option>
+                <option value="Working Life Logistics">Working Life Logistics</option>
+                <option value="Habitarium Galactica: User Study">Habitarium Galactica: User Study</option>
+                <option value="Artemis Experimental Laboratory Ethics Study">Artemis Experimental Laboratory Ethics Study</option>
+                <option value="LifePod Acoustics Design">LifePod Acoustics Design</option>
+                <option value="Horizons Health Centre User Beta">Horizons Health Centre User Beta</option>
+                <option value="Hyperloop User Beta">Hyperloop User Beta</option>
+                <option value="Mars LMP5i Terrain Exploration Vehicle">Mars LMP5i Terrain Exploration Vehicle</option>
+                <option value="Terranian Sleep Pod UX">Terranian Sleep Pod UX</option>
+                <option value="GastroPod UX">GastroPod UX</option>
+            </select>
+        </div>
+        <div data-new="Date">
+            <label for="date">Date</label>
+            <input type="date" aria-label="date logged" id="date-logged" value="2065-06-25" min="2065-01-01" id="date">
+        </div>
+        <div data-new="SensemakerName">
+            <label for="name">Sensemaker Name</label></br>
+            <input type="text" aria-label="Sensemaker's first name" placeholder="First Name">
+            <input type="text" aria-label="Sensemaker's last name" placeholder="Last Name">
+        </div>
+        <div>
+            <button id="submit">SUBMIT NUGGET</button>
+        </div>
+        </p>
     </div>
 </div>
     <main id="data-table">
@@ -60,80 +138,6 @@
                 </tr>
             </thead>
             <tbody id="table-body">
-                <tr id="user-input">
-                    <td data-new="ID"></td>
-                    <td data-new="Observation">
-                        <label for="newObservation">New observation</label>
-                        <textarea name="Observation" id="newObservation" aria-label="New observation" class="newInput" placeholder='"Smell of hot metal in the AstroPod..."'></textarea>
-                    </td>
-                    <td data-new="ObservationDirectory">
-                        <label for="newDirectory">Evidence?</label>
-                        <textarea name="ObservationDirectory" id="newDirectory" aria-label="New observation directory" class="newInput" placeholder="Link to video/report/email/voice recording"></textarea>
-                    </td>
-                    <td data-new="ExperienceVector">
-                        <select name="Experience" aria-label="New experience vector">
-                            <option value="">Select One</option>
-                            <option value="Positive">Positive</option>
-                            <option value="Neutral">Neutral</option>
-                            <option value="Negative">Negative</option>
-                        </select>
-                    </td>
-                    <td data-new="Magnitude">
-                        <select name="Magnitude" aria-label="New magnitude">
-                            <option value="">Select One</option>
-                            <option value="High">High</option>
-                            <option value="Medium">Medium</option>
-                            <option value="Low">Low</option>
-                        </select>
-                    </td>
-                    <td data-new="Frequency">
-                        <select name="Frequency" aria-label="New frequency">
-                            <option value="">Select One</option>
-                            <option value="Once">Once</option>
-                            <option value="Several Times">Several Times</option>
-                            <option value="Often">Often</option>
-                            <option value="Constant">Constant</option>
-                        </select>
-                    </td>
-                    <td data-new="Emotions">
-                        <label for="emotions">How does the user feel?</label>
-                        <textarea id ="emotions" name="Emotions" aria-label="New emotions" class="newInput" placeholder="Separate emotions with #"></textarea>
-                    </td>
-                    <td data-new="Insights">
-                        <label for="insight">What can we learn?</label>
-                        <textarea id="insight" name="Insights" aria-label="New insights" class="newInput" placeholder='"Unnatural smells affect mental health..."'></textarea>
-                    </td>
-                    <td data-new="Description">
-                        <label for="description">Decribe what you learnt</label>
-                        <textarea id="description" name="Description" aria-label="New description" class="newInput" placeholder='"Research shows..."'></textarea>
-                    </td>
-                    <td data-new="Project">
-                        <select name="Project" aria-label="New project">
-                            <option value="">Select One</option>
-                            <option value="Community Pod UX">Community Pod UX</option>
-                            <option value="Martian Frontiers Colony Induction">Martian Frontiers Colony Induction</option>
-                            <option value="Working Life Logistics">Working Life Logistics</option>
-                            <option value="Habitarium Galactica: User Study">Habitarium Galactica: User Study</option>
-                            <option value="Artemis Experimental Laboratory Ethics Study">Artemis Experimental Laboratory Ethics Study</option>
-                            <option value="LifePod Acoustics Design">LifePod Acoustics Design</option>
-                            <option value="Horizons Health Centre User Beta">Horizons Health Centre User Beta</option>
-                            <option value="Hyperloop User Beta">Hyperloop User Beta</option>
-                            <option value="Mars LMP5i Terrain Exploration Vehicle">Mars LMP5i Terrain Exploration Vehicle</option>
-                            <option value="Terranian Sleep Pod UX">Terranian Sleep Pod UX</option>
-                            <option value="GastroPod UX">GastroPod UX</option>
-                        </select>
-                    </td>
-                    <td data-new="Date">
-                        <input type="date" aria-label="date logged" id="date-logged" value="2065-06-25" min="2065-01-01">
-                    </td>
-                    <td data-new="SensemakerName">
-                        <input type="text" aria-label="Sensemaker's first name" placeholder="First Name">
-                        <input type="text" aria-label="Sensemaker's last name" placeholder="Last Name">
-                    </td>
-                    <td>
-                        <button id="submit">SUBMIT NUGGET</button>
-                    </td>
-                </tr>
                 <!--queried nuggets go here-->
             </tbody>
         </table>

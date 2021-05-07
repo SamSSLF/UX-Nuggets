@@ -170,7 +170,7 @@ UI.init = function() {
 
     submitNew.onclick = () => {
         console.log("User wants to submit a new nugget");
-        popup.style.display = "block";
+        popup.style.display = "inline-block";
     };
 
     closeButton.onclick = () => {
