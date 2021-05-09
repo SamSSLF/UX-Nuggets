@@ -10,6 +10,21 @@ This project was completed in the course of 6 weeks from zero knowledge of Javas
 
 Recently I have improved upon the code I wrote last year, improving the modularity of the program, the UI, and testing. 
 
+## Features
+- A user can input an observation/insight via the 'Add New Nugget' popup form in the sidebar.
+- 'Nuggets' can be filtered by Experience Vector.
+
+### Accessibility
+- Colour Contrast is conforms to Web Content Accessibility Guidelines(WCAG) Level AA. 
+- Input form row has aria labels for each field.
+- All interactive elements tabable.
+- Context is given to table elements through use of semantics such as <thead> and <td> so people using screen readers can have the row and column headers read aloud as they navigate through the table, or use alternative ways to render data to suit their needs.
+
+## Limitations and Future Work Needed
+- A more intricate data structure in the form of relational tables could be added to expand the functionality of the app e.g. a database of team members and different collections of insights for different teams and organisations.
+- More filters e.g. a key word search, sort by emotions.
+- Better testing framework i.e. not depending on IDs to delete test records would make the test script more robust. More tables would help with writing useful tests.
+
 ## How to Run
 1. Make sure you have Node.js installed.
 2. Navigate to the program's working directory 'UX-Nuggets' in the terminal.
@@ -17,12 +32,6 @@ Recently I have improved upon the code I wrote last year, improving the modulari
 4. To view the web-app on your browser, type `$ node server.js` to run the program on port 8080 of your computer.
 
 Best viewed on Google Chrome on a desktop computer.
-
-## How does it work?
-
-
-## UX/UI
-
 
 ## Tests
 Run tests with 
