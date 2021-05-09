@@ -18,6 +18,6 @@ Inspired by this insight, I created a database for the future designers of the i
 ## Tests
 run tests with 
 ```command line
-npm test
+$ npm test
 
 ```
