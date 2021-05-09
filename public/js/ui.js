@@ -1,34 +1,20 @@
-import {getByID, getFieldInTemplate, getFilterElement, cloneTemplate} from "./utils.js"
+import {getByID, getFieldInTemplate, getFilterElement, cloneTemplate, createFieldTemplate} from "./utils.js"
 
 const UI = Object.create(null);
+
 
 const setFieldInTemplate = function (field, content, template) {
     const fieldEl = getFieldInTemplate(field, template);
     if (field === "ObservationDirectory"){
-        var linkTemplate = cloneTemplate("observation-link");
-        var linkElement = linkTemplate.querySelector("a");
-        fieldEl.textContent = "";
-        linkElement.href = content;
-        linkElement.textContent = content;
-        fieldEl.appendChild(linkTemplate);
+        createFieldTemplate("observation-link", fieldEl, "a", "link", content);
 
     } else if (field === "Description")  {
-        var overflowTemplate = cloneTemplate("overflow-cell");
-        var overflowElement = overflowTemplate.querySelector("div");
-        fieldEl.textContent = "";
-        overflowElement.textContent = content;
-        fieldEl.appendChild(overflowTemplate);
+        createFieldTemplate("overflow-cell", fieldEl, "div", "overflow", content);
 
     } else if(field === "ExperienceVector")  {
-        var expTemplate = cloneTemplate("experience-vector");
-        var expElement = expTemplate.querySelector("span");
-        fieldEl.textContent = "";
-        expElement.textContent = content;
-        expElement.dataset.value = content;
-        fieldEl.appendChild(expTemplate);
+        createFieldTemplate("experience-vector", fieldEl, "span", "select", content);
 
-    } else
-    {
+    } else{
         fieldEl.textContent = content;
     }
 };
@@ -74,8 +60,8 @@ const getCellValue = function(field, cell){
         case "Project":
             return cell.querySelector("select").value;
         case "SensemakerName":
-            return cell.childNodes[1].value + " " +
-                cell.childNodes[3].value;
+            // these nodes contain the first name and last name user input
+            return cell.childNodes[3].value + " " + cell.childNodes[5].value; 
         case "Date":
             return cell.querySelector("input").value;
         default:
@@ -98,6 +84,7 @@ const onButtonClick = function(){
             data[field] = value;
         }
     });
+
     //if field has not been filled, alert the user
     if(emptyFields.length > 0){
         alert(`Please fill in the following fields: ${emptyFields.join(", ")}`);
@@ -115,7 +102,7 @@ const onButtonClick = function(){
             noNonsense = true;
         }
     });
-    if(data.Observation.length < 20 || noNonsense === false)
+    if(data.Observation.length < 5 || noNonsense === false)
     {
         return alert("Do not spam the database! Please write an observation");
     }
@@ -136,7 +123,19 @@ const onButtonClick = function(){
 
     const inputInput = document.querySelectorAll("input");
     inputInput.forEach((area) => area.value = "");
+
+    closePopup();
 };
+
+let closePopup = () => {
+    const popup = getByID("hover_bkgr_fricc");
+    popup.style.display = "none";
+}
+
+let openPopup = () => {
+    const popup = getByID("hover_bkgr_fricc");
+    popup.style.display = "flex";
+}
 
 UI.init = function() {
     // load the initial data
@@ -148,23 +147,14 @@ UI.init = function() {
 
     const button = getByID("submit");
     button.onclick = onButtonClick;
-    
-    //popup window
-    const popup = getByID("hover_bkgr_fricc");
 
     const submitNew = getByID("submit-new");
 
     const closeButton = getByID("popupCloseButton");
 
-    submitNew.onclick = () => {
-        console.log("User wants to submit a new nugget");
-        popup.style.display = "inline-block";
-    };
+    submitNew.onclick = openPopup;
 
-    closeButton.onclick = () => {
-        console.log("User wants to close the popup");
-        popup.style.display = "none";
-    }
+    closeButton.onclick = closePopup;
 
 };
 

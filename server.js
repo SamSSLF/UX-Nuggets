@@ -1,7 +1,7 @@
 import Data from "./data.js";
 import express from "express";
 
-const data = new Data();
+const data = new Data("./nuggets.sqlite3");
 
 const app = express();
 const port = 8080;
