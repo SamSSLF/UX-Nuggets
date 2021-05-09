@@ -1,10 +1,8 @@
 /*jslint node: true */
 import sqlite3 from "sqlite3";
 
-const path = "./nuggets.sqlite3"
-
 class Data {
-    constructor(){
+    constructor(path){
         this.db = new sqlite3.Database(path);
     }
 
