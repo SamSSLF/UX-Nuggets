@@ -9,7 +9,7 @@ Inspired by this insight, I created a database for the future designers of the i
 1. Install Node.js
 2. Install dependencies
 3. Type `npm install express --save`
-4. To view the web-app on your browser, type `node server.js` to run the program on port 8080 of your computer. 
+4. To view the web-app on your browser, navigate to the working directory 'UX-Nuggets' in the terminal, then type `node server.js` to run the program on port 8080 of your computer. 
 
 ## How does it work?
 

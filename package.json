@@ -1,21 +1,26 @@
 {
-  "name": "nuggetapp",
+  "name": "ux-nuggets",
   "version": "1.0.0",
-  "description": "This is an interactive UX Nugget Database",
+  "description": "This is an interactive database of user insights for the Mars Frontiers Colony Design Team",
   "main": "server.js",
-  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "mocha": "^8.4.0"
+  },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamSSLF/UX-Nuggets.git"
   },
   "author": "Samantha Foong",
   "license": "MIT",
-  "dependencies": {
-    "chai": "^4.2.0",
-    "express": "^4.17.1",
-    "sqlite3": "^4.2.0"
+  "bugs": {
+    "url": "https://github.com/SamSSLF/UX-Nuggets/issues"
   },
-  "devDependencies": {
-    "fast-check": "^1.25.1",
-    "mocha": "^8.0.1"
-  }
+  "homepage": "https://github.com/SamSSLF/UX-Nuggets#readme"
 }
