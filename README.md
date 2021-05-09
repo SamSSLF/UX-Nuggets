@@ -13,15 +13,19 @@ Recently I have improved upon the code I wrote last year, improving the modulari
 ## How to Run
 1. Make sure you have Node.js installed.
 2. Navigate to the program's working directory 'UX-Nuggets' in the terminal.
-3. Install dependencies by typing `npm install` into the terminal.
-4. To view the web-app on your browser, type `node server.js` to run the program on port 8080 of your computer.
+3. Install dependencies by typing `$ npm install` into the terminal.
+4. To view the web-app on your browser, type `$ node server.js` to run the program on port 8080 of your computer.
+
+Best viewed on Google Chrome on a desktop computer.
 
 ## How does it work?
 
+
 ## UX/UI
+
 
 ## Tests
 Run tests with 
 ```bash
-$ npm test
+$ npm run test
 ```
