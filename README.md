@@ -5,10 +5,19 @@ In an organization where multiple research studies are conducted every week, mon
 
 Inspired by this insight, I created a database for the future designers of the imaginary Martian Frontiers Colony to consolidate user research data and synthesise insights to guide them through their design processes. Each observation and related insights are logged as a "nugget" that any member of the organisation can query and refer to.
 
-To view the web-app on your browser, type `node server.js` to run the program on port 8080 of your computer. 
+## How to Run
+1. Install Node.js
+2. Install dependencies
+3. Type `npm install express --save`
+4. To view the web-app on your browser, type `node server.js` to run the program on port 8080 of your computer. 
 
 ## How does it work?
 
 ## UX/UI
 
 ## Tests
+run tests with 
+```command line
+npm test
+
+```
