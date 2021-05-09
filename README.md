@@ -13,12 +13,13 @@ Recently I have improved upon the code I wrote last year, improving the modulari
 ## Features
 - A user can input an observation/insight via the 'Add New Nugget' popup form in the sidebar.
 - 'Nuggets' can be filtered by Experience Vector.
+- A back-end that stores insights (nuggets) on a server, and allows the user to read from and write to that database via the use of asynchronous javascript Promises and callbacks.  
 
 ### Accessibility
 - Colour Contrast is conforms to Web Content Accessibility Guidelines(WCAG) Level AA. 
 - Input form row has aria labels for each field.
 - All interactive elements tabable.
-- Context is given to table elements through use of semantics such as <thead> and <td> so people using screen readers can have the row and column headers read aloud as they navigate through the table, or use alternative ways to render data to suit their needs.
+- Context is given to table elements through use of semantics such as `<thead>` and `<td>` so people using screen readers can have the row and column headers read aloud as they navigate through the table, or use alternative ways to render data to suit their needs.
 
 ## Limitations and Future Work Needed
 - A more intricate data structure in the form of relational tables could be added to expand the functionality of the app e.g. a database of team members and different collections of insights for different teams and organisations.
