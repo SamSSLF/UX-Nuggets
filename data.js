@@ -6,6 +6,20 @@ class Data {
         this.db = new sqlite3.Database(path);
     }
 
+    removeById(id){
+        const deleteSQL = `DELETE from Nuggets where ID=$ID`
+        return new Promise((resolve, reject) => {
+            this.db.all(deleteSQL,{'$ID':id},
+            function (error, rows) {
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                resolve(rows);
+            });
+        });
+    }
+
     insertData (data){
         const insertSQL =
         `INSERT INTO Nuggets(
@@ -20,7 +34,8 @@ class Data {
             Project,
             Date,
             SensemakerName
-         ) VALUES(
+         )
+         VALUES(
             $Observation,
             $ObservationDirectory,
             $ExperienceVector,
