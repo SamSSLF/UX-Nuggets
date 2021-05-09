@@ -1,3 +1,5 @@
+/* Gets and sends data via an API and displays it to the user*/
+
 import {getByID, getFieldInTemplate, getFilterElement, cloneTemplate, createFieldTemplate} from "./utils.js"
 
 const UI = Object.create(null);
