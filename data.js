@@ -77,7 +77,7 @@ class Data {
     getAllRows (filter) {
         let allNuggets = "SELECT * FROM Nuggets";
         const params = {};
-        if(filter && filter.experienceVector && filter.experienceVector !== "All"){
+        if(filter && filter.experienceVector !== "All"){
             allNuggets += " WHERE experienceVector=$experienceVector";
             params["$experienceVector"] = filter.experienceVector;
         }
