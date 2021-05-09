@@ -6,7 +6,7 @@ In an organization where multiple research studies are conducted every week, mon
 Inspired by this insight, I created a database for the future designers of the imaginary Martian Frontiers Colony to consolidate user research data and synthesise insights to guide them through their design processes. Each observation and related insights are logged as a "nugget" that any member of the organisation can query and refer to.
 
 ## Key Info
-This project was completed in the course of 6 weeks from zero knowledge of Javascript, SQL, Front-end and Back-end programming during the Summer Term of the 2019-20 academic year for my Computing-2:Applications module. We were required to write a web application from scratch without the use of frameworks, utilising best practices. This was a solo project. 
+This solo project was completed in the course of 6 weeks from zero knowledge of Javascript, SQL, Front-end and Back-end programming during the Summer Term of the 2019-20 academic year for my Computing-2: Applications module. We were required to write a web application from scratch without the use of frameworks, utilising best practices. Please note this was originally pushed to a private GitHub Classroom repository, thus this repo lacks the commit history from when it was first made.
 
 Recently I have improved upon the code I wrote last year, improving the modularity of the program, the UI, and testing. 
 
