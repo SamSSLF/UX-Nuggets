@@ -1,3 +1,5 @@
+/* Utility functions for ui.js */
+
 const getByID = (id) => document.getElementById(id);
 
 const cloneTemplate = (id) => document.importNode(getByID(id).content, true);
