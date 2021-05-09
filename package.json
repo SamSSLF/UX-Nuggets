@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "ux-nuggets",
   "version": "1.0.0",
   "description": "This is an interactive database of user insights for the Mars Frontiers Colony Design Team",
