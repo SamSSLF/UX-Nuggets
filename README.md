@@ -6,10 +6,17 @@ In an organization where multiple research studies are conducted every week, mon
 Inspired by this insight, I created a database for the future designers of the imaginary Martian Frontiers Colony to consolidate user research data and synthesise insights to guide them through their design processes. Each observation and related insights are logged as a "nugget" that any member of the organisation can query and refer to.
 
 ## How to Run
-1. Install Node.js
-2. Install dependencies
-3. Type `npm install express --save`
-4. To view the web-app on your browser, navigate to the working directory 'UX-Nuggets' in the terminal, then type `node server.js` to run the program on port 8080 of your computer. 
+1. Make sure you have Node.js installed.
+2. Navigate to the program's working directory 'UX-Nuggets' in the terminal.
+3. Install dependencies with 
+```shell
+npm install
+```
+4. To view the web-app on your browser, type 
+```shell
+node server.js
+``` 
+to run the program on port 8080 of your computer.
 
 ## How does it work?
 
@@ -17,7 +24,7 @@ Inspired by this insight, I created a database for the future designers of the i
 
 ## Tests
 run tests with 
-```command line
-$ npm test
+```shell
+npm test
 
 ```
