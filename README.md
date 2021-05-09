@@ -10,13 +10,11 @@ Inspired by this insight, I created a database for the future designers of the i
 2. Navigate to the program's working directory 'UX-Nuggets' in the terminal.
 3. Install dependencies with 
 ```shell
-$npm install
-
+$ npm install
 ```
 4. To view the web-app on your browser, type 
 ```shell
-$node server.js
-
+$ node server.js
 ``` 
 to run the program on port 8080 of your computer.
 
@@ -27,6 +25,5 @@ to run the program on port 8080 of your computer.
 ## Tests
 run tests with 
 ```shell
-$npm test
-
+$ npm test
 ```
